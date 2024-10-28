@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="container mx-auto p-6">
       <header class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold">Route Optimizer</h1>
+        <h1 class="text-3xl font-bold">Work Optimizer</h1>
         <button
           class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -13,14 +13,14 @@ import { Component } from '@angular/core';
                   d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
                   clip-rule="evenodd"/>
           </svg>
-          Optimize Routes
+          Optimize Work Routes
         </button>
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="lg:col-span-2">
           <div class="bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-semibold mb-4">Route Map</h2>
+            <h2 class="text-xl font-semibold mb-4">Job Map</h2>
             <div class="bg-gray-100 h-96 flex items-center justify-center rounded-lg relative overflow-hidden">
               <!-- Simple SVG Map Visualization -->
               <svg width="100%" height="100%" viewBox="0 0 800 600">
@@ -57,6 +57,14 @@ import { Component } from '@angular/core';
                   <!-- Location D -->
                   <circle cx="200" cy="400" r="8" fill="#10B981"/>
                   <text x="215" y="405" class="text-sm">Location D</text>
+
+                  <!-- Location E -->
+                  <circle cx="23" cy="192" r="8" fill="#10B981"/>
+                  <text x="37" y="195" class="text-sm">Location E</text>
+
+                  <!-- Location F -->
+                  <circle cx="48" cy="303" r="8" fill="#10B981"/>
+                  <text x="60" y="308" class="text-sm">Location F</text>
                 </g>
 
                 <!-- Vehicles -->
@@ -66,6 +74,9 @@ import { Component } from '@angular/core';
 
                   <circle cx="350" cy="250" r="6" fill="#EF4444"/>
                   <text x="365" y="255" class="text-sm">Vehicle 2</text>
+
+                  <circle cx="130" cy="250" r="6" fill="#EF4444"/>
+                  <text x="138" y="255" class="text-sm">Vehicle 3</text>
                 </g>
               </svg>
 
