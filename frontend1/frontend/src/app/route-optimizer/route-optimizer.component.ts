@@ -21,8 +21,106 @@ import { Component } from '@angular/core';
         <div class="lg:col-span-2">
           <div class="bg-white rounded-lg shadow-lg p-6">
             <h2 class="text-xl font-semibold mb-4">Route Map</h2>
-            <div class="bg-gray-200 h-96 flex items-center justify-center rounded-lg">
-              <p class="text-gray-600">Interactive map will be displayed here</p>
+            <div class="bg-gray-100 h-96 flex items-center justify-center rounded-lg relative overflow-hidden">
+              <!-- Simple SVG Map Visualization -->
+              <svg width="100%" height="100%" viewBox="0 0 800 600">
+                <!-- Background Grid -->
+                <defs>
+                  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+
+                <!-- Routes -->
+                <path d="M 100,100 C 200,100 300,200 400,300"
+                      stroke="#3B82F6" stroke-width="3" fill="none"
+                      class="animate-dash"/>
+                <path d="M 500,100 C 400,200 300,300 200,400"
+                      stroke="#10B981" stroke-width="3" fill="none"
+                      class="animate-dash"/>
+
+                <!-- Locations -->
+                <g>
+                  <!-- Location A -->
+                  <circle cx="100" cy="100" r="8" fill="#3B82F6"/>
+                  <text x="115" y="105" class="text-sm">Location A</text>
+
+                  <!-- Location B -->
+                  <circle cx="400" cy="300" r="8" fill="#3B82F6"/>
+                  <text x="415" y="305" class="text-sm">Location B</text>
+
+                  <!-- Location C -->
+                  <circle cx="500" cy="100" r="8" fill="#10B981"/>
+                  <text x="515" y="105" class="text-sm">Location C</text>
+
+                  <!-- Location D -->
+                  <circle cx="200" cy="400" r="8" fill="#10B981"/>
+                  <text x="215" y="405" class="text-sm">Location D</text>
+                </g>
+
+                <!-- Vehicles -->
+                <g>
+                  <circle cx="250" cy="200" r="6" fill="#EF4444"/>
+                  <text x="265" y="205" class="text-sm">Vehicle 1</text>
+
+                  <circle cx="350" cy="250" r="6" fill="#EF4444"/>
+                  <text x="365" y="255" class="text-sm">Vehicle 2</text>
+                </g>
+              </svg>
+
+              <!-- Map Controls -->
+              <div class="absolute bottom-4 right-4 flex gap-2">
+                <button class="p-2 bg-white rounded-lg shadow hover:bg-gray-50">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                  </svg>
+                </button>
+                <button class="p-2 bg-white rounded-lg shadow hover:bg-gray-50">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Route Statistics -->
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg shadow-lg p-4">
+              <h3 class="text-lg font-semibold mb-2">Route Statistics</h3>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Average Speed:</span>
+                  <span class="font-semibold">45 km/h</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Total Stops:</span>
+                  <span class="font-semibold">12</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Route Completion:</span>
+                  <span class="font-semibold">67%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+              <h3 class="text-lg font-semibold mb-2">Vehicle Status</h3>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Active Vehicles:</span>
+                  <span class="font-semibold">5/7</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">On Schedule:</span>
+                  <span class="font-semibold text-green-600">4</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Delayed:</span>
+                  <span class="font-semibold text-red-600">1</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -143,7 +241,17 @@ import { Component } from '@angular/core';
     </div>
   `,
   standalone: true,
-  styles: []
+  styles: [`
+    .animate-dash {
+      stroke-dasharray: 10;
+      animation: dash 20s linear infinite;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 1000;
+      }
+    }
+  `]
 })
 export class RouteOptimizerComponent {
   // Component logic will go here

@@ -1,85 +1,95 @@
+// File: src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {Router, RouterModule} from '@angular/router';
+import { UserTypeService } from './services/user-type.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   template: `
     <div class="min-h-screen bg-gray-100">
-      <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <div class="relative flex items-center justify-between h-16">
-            <!-- Mobile menu button -->
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-
-            <!-- Left side menu items -->
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="hidden sm:block sm:ml-6">
-                <div class="flex space-x-4">
-                  <a routerLink="/dashboard" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                  <a routerLink="/inventory" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inventory</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Logo -->
-            <div class="flex-shrink-0 flex items-center">
-              <img class="block lg:hidden h-8 w-auto" src="assets/liftos-logo.png" alt="LiftOS">
-              <img class="hidden lg:block h-8 w-auto" src="assets/liftos-logo-full.png" alt="LiftOS">
-            </div>
-
-            <!-- Right side menu items -->
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <div class="hidden sm:block sm:ml-6">
-                <div class="flex space-x-4">
-                  <a routerLink="/bookings" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Bookings</a>
-                  <a routerLink="/route-optimizer" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Route Optimizer</a>
-                  <a routerLink="/crane-selector" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Crane Selector</a>
-                </div>
+      <!-- Navigation shown only when user type is selected -->
+      <nav *ngIf="userTypeService.userType$ | async" class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-16">
+            <div class="flex">
+              <div class="flex-shrink-0 flex items-center cursor-pointer" (click)="navigateToUserType()">
+                <img class="h-8 w-auto" src="assets/liftos-logo.png" alt="LiftOS">
               </div>
 
-              <!-- Profile dropdown -->
-              <div class="ml-3 relative">
-                <div>
-                  <button type="button" class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                  </button>
-                </div>
+              <!-- Supplier Navigation -->
+              <div *ngIf="(userTypeService.userType$ | async) === 'supplier'"
+                   class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a [routerLink]="['/supplier/dashboard']"
+                   routerLinkActive="border-blue-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Dashboard
+                </a>
+                <a [routerLink]="['/inventory']"
+                   routerLinkActive="border-blue-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Inventory
+                </a>
+                <a [routerLink]="['/route-optimizer']"
+                   routerLinkActive="border-blue-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Route Optimizer
+                </a>
+                <a [routerLink]="['/bookings']"
+                   routerLinkActive="border-blue-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Bookings
+                </a>
+              </div>
+
+              <!-- Customer Navigation -->
+              <div *ngIf="(userTypeService.userType$ | async) === 'customer'"
+                   class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a [routerLink]="['/customer/dashboard']"
+                   routerLinkActive="border-green-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Dashboard
+                </a>
+                <a [routerLink]="['/crane-selector']"
+                   routerLinkActive="border-green-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  Crane Selector
+                </a>
+                <a [routerLink]="['/bookings']"
+                   routerLinkActive="border-green-500 text-gray-900"
+                   [routerLinkActiveOptions]="{exact: true}"
+                   class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                  My Bookings
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="px-2 pt-2 pb-3 space-y-1">
-            <a routerLink="/dashboard" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-            <a routerLink="/inventory" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inventory</a>
-            <a routerLink="/bookings" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Bookings</a>
-            <a routerLink="/route-optimizer" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Route Optimizer</a>
-            <a routerLink="/crane-selector" routerLinkActive="bg-gray-900 text-white" class="text-gray-700 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Crane Selector</a>
           </div>
         </div>
       </nav>
 
+      <!-- Main content -->
       <main>
-        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
       </main>
     </div>
-  `,
-  styles: []
+  `
 })
 export class AppComponent {
-  title = 'LiftOS';
+  constructor(
+    public userTypeService: UserTypeService,
+    private router: Router  // Add Router to constructor
+  ) {}
+
+  navigateToUserType() {
+    this.userTypeService.setUserType(null);
+    this.router.navigate(['/']);  // Add explicit navigation
+  }
 }
