@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
         <div class="p-6 sm:p-8">
           <div class="flex items-center justify-between">
             <div>
-              <h1 class="text-2xl font-bold text-white">Welcome back, Customer Name</h1>
+              <h1 class="text-2xl font-bold text-white">Welcome back, Proinfra Oy.</h1>
               <p class="mt-2 text-blue-100">What can we help you lift today?</p>
             </div>
             <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">

@@ -6,37 +6,68 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { RouteOptimizerComponent } from './route-optimizer/route-optimizer.component';
 import { CraneSelectorComponent } from './crane-selector/crane-selector.component';
+import { UserTypeGuard } from './guards/user-type.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component: UserTypeComponent
+    component: UserTypeComponent,
+    pathMatch: 'full'
   },
+  // Supplier routes
   {
-    path: 'supplier/dashboard',
-    component: SupplierDashboardComponent
+    path: 'supplier',
+    canActivate: [UserTypeGuard],
+    children: [
+      {
+        path: 'dashboard',
+        component: SupplierDashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }
+    ]
   },
+  // Customer routes
   {
-    path: 'customer/dashboard',
-    component: CustomerDashboardComponent
+    path: 'customer',
+    canActivate: [UserTypeGuard],
+    children: [
+      {
+        path: 'dashboard',
+        component: CustomerDashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }
+    ]
   },
+  // Protected shared routes
   {
     path: 'inventory',
-    component: InventoryComponent
+    component: InventoryComponent,
+    canActivate: [UserTypeGuard]
   },
   {
     path: 'bookings',
-    component: BookingsComponent
+    component: BookingsComponent,
+    canActivate: [UserTypeGuard]
   },
   {
     path: 'route-optimizer',
-    component: RouteOptimizerComponent
+    component: RouteOptimizerComponent,
+    canActivate: [UserTypeGuard]
   },
   {
     path: 'crane-selector',
-    component: CraneSelectorComponent
+    component: CraneSelectorComponent,
+    canActivate: [UserTypeGuard]
   },
-  // Redirect any unknown paths to home
+  // Wildcard route
   {
     path: '**',
     redirectTo: ''

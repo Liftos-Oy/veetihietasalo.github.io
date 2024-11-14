@@ -1,13 +1,13 @@
 // File: src/app/app.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Router, RouterModule} from '@angular/router';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 import { UserTypeService } from './services/user-type.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NgOptimizedImage],
   template: `
     <div class="min-h-screen bg-gray-100">
       <!-- Navigation shown only when user type is selected -->
@@ -16,7 +16,9 @@ import { UserTypeService } from './services/user-type.service';
           <div class="flex justify-between h-16">
             <div class="flex">
               <div class="flex-shrink-0 flex items-center cursor-pointer" (click)="navigateToUserType()">
-                <img class="h-8 w-auto" src="assets/liftos-logo.png" alt="LiftOS">
+                <img class="h-8 w-auto"
+                     ngSrc="/liftos-logo.png"
+                     alt="" width="128" height="128">
               </div>
 
               <!-- Supplier Navigation -->
@@ -85,11 +87,11 @@ import { UserTypeService } from './services/user-type.service';
 export class AppComponent {
   constructor(
     public userTypeService: UserTypeService,
-    private router: Router  // Add Router to constructor
+    private router: Router
   ) {}
 
   navigateToUserType() {
-    this.userTypeService.setUserType(null);
-    this.router.navigate(['/']);  // Add explicit navigation
+    this.userTypeService.clearUserType();
+    this.router.navigate(['/']);
   }
 }

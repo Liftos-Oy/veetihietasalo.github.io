@@ -10,8 +10,8 @@ import {UserTypeService} from '../services/user-type.service';
     <div class="min-h-screen flex items-center justify-center bg-gray-100">
       <div class="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg">
         <div class="text-center">
-          <img class="mx-auto h-16 w-auto" src="assets/liftos-logo.png" alt="LiftOS">
-          <h2 class="mt-6 text-3xl font-bold text-gray-900">Welcome to LiftOS</h2>
+          <img class="mx-auto h-16 w-auto" src="/liftos-logo.png" alt="LiftOS">
+          <h2 class="mt-6 text-3xl font-bold text-gray-900">Welcome!</h2>
           <p class="mt-2 text-sm text-gray-600">Please select how you want to use our service</p>
         </div>
 
