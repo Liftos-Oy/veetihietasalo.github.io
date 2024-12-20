@@ -14,7 +14,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
           <div class="flex items-center justify-between">
             <div>
               <h1 class="text-2xl font-bold text-white">Welcome back, Proinfra Oy.</h1>
-              <p class="mt-2 text-blue-100">What can we help you lift today?</p>
+              <p class="mt-2 text-blue-100">What can we lift today for you?</p>
             </div>
             <button
               class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
@@ -255,7 +255,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
           <!-- Crane Card 1 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img ngSrc="/crane1.jpg" alt="Mobile Crane" class="w-full h-full object-cover rounded-t-lg">
+              <img class="w-full h-40 object-cover rounded-lg mb-4" src="assets/images/tower-crane.jpg" alt="Tower Crane">
               <span
                 class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Available
@@ -277,7 +277,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
           <!-- Crane Card 2 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img ngSrc="assets/crane2.jpg" class="w-full h-full object-cover rounded-t-lg">
+              <img src="assets/images/mobile-crane.jpg" class="w-full h-full object-cover rounded-t-lg">
               <span
                 class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Coming Soon
@@ -298,7 +298,7 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
           <!-- Crane Card 3 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img ngSrc="/crane3.jpg" class="w-full h-full object-cover rounded-t-lg">
+              <img src="assets/images/crawler-crane.jpg" class="w-full h-full object-cover rounded-t-lg">
               <span
                 class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Available

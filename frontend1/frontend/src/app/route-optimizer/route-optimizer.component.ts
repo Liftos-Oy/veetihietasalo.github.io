@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="container mx-auto p-6">
       <header class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold">Fleet Schedule Optimization</h1>
+        <h1 class="text-3xl font-bold">AI Schedule Optimization</h1>
         <button
           class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -137,7 +137,7 @@ import { Component } from '@angular/core';
         </div>
 
         <div class="bg-white rounded-lg shadow-lg p-6">
-          <h2 class="text-xl font-semibold mb-4">Fleet Schedule Optimization</h2>
+          <h2 class="text-xl font-semibold mb-4">AI Schedule Optimization</h2>
           <form>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="vehicleCount">
@@ -170,9 +170,9 @@ import { Component } from '@angular/core';
               <select
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="priority">
-                <option>Minimize Distance</option>
+                <option>Minimize Fuel Consumption</option>
                 <option>Minimize Time</option>
-                <option>Balance Load</option>
+                <option>Maximize Profit</option>
               </select>
             </div>
             <div class="flex items-center justify-between">

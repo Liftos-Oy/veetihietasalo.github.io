@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
       <!-- Header with Welcome Message -->
       <div class="mb-8">
         <h1 class="text-2xl font-bold text-gray-900">Welcome back, Powerlift Finland Oy!</h1>
-        <p class="text-gray-600">Here's what's happening with your equipment today.</p>
+        <p class="text-gray-600">Here's what's happening with your equipment today. Let's start optimizing with AI!</p>
       </div>
 
       <!-- Main Stats Grid -->
@@ -82,7 +82,7 @@ import { CommonModule } from '@angular/common';
                 <dl>
                   <dt class="text-sm font-medium text-gray-500 truncate">Monthly Revenue</dt>
                   <dd class="flex items-baseline">
-                    <div class="text-2xl font-semibold text-gray-900">€24,500</div>
+                    <div class="text-2xl font-semibold text-gray-900">€240,581</div>
                     <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
                       <svg class="w-3 h-3 fill-current" viewBox="0 0 12 12">
                         <path d="M3 8l3-3 3 3"/>
@@ -169,8 +169,8 @@ import { CommonModule } from '@angular/common';
                     </div>
                     <div class="min-w-0 flex-1">
                       <div>
-                        <p class="text-sm text-gray-500">New booking received</p>
-                        <p class="mt-0.5 text-sm text-gray-600">30 minutes ago</p>
+                        <p class="text-sm text-gray-500">New booking received:</p>
+                        <p class="mt-0.5 text-sm text-gray-600">18 minutes ago</p>
                       </div>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ import { CommonModule } from '@angular/common';
                     </div>
                     <div class="min-w-0 flex-1">
                       <div>
-                        <p class="text-sm text-gray-500">Crane #123 completed maintenance</p>
+                        <p class="text-sm text-gray-500">Crane #13 completed maintenance</p>
                         <p class="mt-0.5 text-sm text-gray-600">2 hours ago</p>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ import { CommonModule } from '@angular/common';
                     </div>
                     <div class="min-w-0 flex-1">
                       <div>
-                        <p class="text-sm text-gray-500">Maintenance scheduled for Crane #456</p>
+                        <p class="text-sm text-gray-500">Maintenance scheduled for Crane #45</p>
                         <p class="mt-0.5 text-sm text-gray-600">5 hours ago</p>
                       </div>
                     </div>
@@ -225,7 +225,7 @@ import { CommonModule } from '@angular/common';
             <div class="bg-gray-50 rounded-lg p-4">
               <div class="flex items-center justify-between">
                 <h4 class="text-sm font-medium text-gray-500">Available</h4>
-                <span class="text-green-600 text-lg font-semibold">8</span>
+                <span class="text-green-600 text-lg font-semibold">18</span>
               </div>
               <div class="mt-2 w-full bg-gray-200 rounded-full h-2">
                 <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
@@ -317,7 +317,7 @@ import { CommonModule } from '@angular/common';
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
               </svg>
             </div>
-            <span class="ml-4 text-gray-900 font-medium">Create New Booking</span>
+            <span class="ml-4 text-gray-900 font-medium">See Pending Bookings</span>
           </div>
           <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
