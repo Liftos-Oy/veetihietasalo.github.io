@@ -1,11 +1,11 @@
 // File: src/app/customer/dashboard/customer-dashboard.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-customer-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   template: `
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <!-- Welcome Banner -->
@@ -16,7 +16,8 @@ import { CommonModule } from '@angular/common';
               <h1 class="text-2xl font-bold text-white">Welcome back, Proinfra Oy.</h1>
               <p class="mt-2 text-blue-100">What can we help you lift today?</p>
             </div>
-            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
+            <button
+              class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
               Book Now
             </button>
           </div>
@@ -31,7 +32,7 @@ import { CommonModule } from '@angular/common';
             <div class="p-3 bg-blue-100 rounded-full">
               <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
               </svg>
             </div>
             <div class="ml-4">
@@ -53,7 +54,7 @@ import { CommonModule } from '@angular/common';
             <div class="p-3 bg-green-100 rounded-full">
               <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
             <div class="ml-4">
@@ -75,7 +76,7 @@ import { CommonModule } from '@angular/common';
             <div class="p-3 bg-purple-100 rounded-full">
               <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
               </svg>
             </div>
             <div class="ml-4">
@@ -97,7 +98,7 @@ import { CommonModule } from '@angular/common';
             <div class="p-3 bg-yellow-100 rounded-full">
               <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
             <div class="ml-4">
@@ -166,7 +167,7 @@ import { CommonModule } from '@angular/common';
                       <div class="h-10 w-10 rounded-lg bg-gray-200 flex items-center justify-center">
                         <svg class="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                         </svg>
                       </div>
                     </div>
@@ -199,13 +200,13 @@ import { CommonModule } from '@angular/common';
             <div class="flex items-center">
               <div class="bg-blue-100 p-3 rounded-lg">
                 <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                 </svg>
               </div>
               <span class="ml-4 text-gray-900 font-medium">New Booking</span>
             </div>
             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </div>
         </button>
@@ -215,14 +216,16 @@ import { CommonModule } from '@angular/common';
             <div class="flex items-center">
               <div class="bg-purple-100 p-3 rounded-lg">
                 <svg class="h-6 w-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                 </svg>
               </div>
               <span class="ml-4 text-gray-900 font-medium">View Estimates</span>
             </div>
             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </div>
         </button>
@@ -233,13 +236,13 @@ import { CommonModule } from '@angular/common';
               <div class="bg-green-100 p-3 rounded-lg">
                 <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
                 </svg>
               </div>
               <span class="ml-4 text-gray-900 font-medium">Support</span>
             </div>
             <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </div>
         </button>
@@ -252,8 +255,9 @@ import { CommonModule } from '@angular/common';
           <!-- Crane Card 1 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img src="assets/crane1.jpg" alt="Mobile Crane" class="w-full h-full object-cover rounded-t-lg">
-              <span class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
+              <img ngSrc="/crane1.jpg" alt="Mobile Crane" class="w-full h-full object-cover rounded-t-lg">
+              <span
+                class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Available
               </span>
             </div>
@@ -262,7 +266,8 @@ import { CommonModule } from '@angular/common';
               <p class="text-sm text-gray-600 mt-1">Perfect for medium construction projects</p>
               <div class="mt-4 flex justify-between items-center">
                 <span class="text-blue-600 font-medium">€500/day</span>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors duration-200">
+                <button
+                  class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors duration-200">
                   Book Now
                 </button>
               </div>
@@ -272,8 +277,9 @@ import { CommonModule } from '@angular/common';
           <!-- Crane Card 2 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img src="assets/crane2.jpg" alt="Tower Crane" class="w-full h-full object-cover rounded-t-lg">
-              <span class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">
+              <img ngSrc="assets/crane2.jpg" class="w-full h-full object-cover rounded-t-lg">
+              <span
+                class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Coming Soon
               </span>
             </div>
@@ -292,8 +298,9 @@ import { CommonModule } from '@angular/common';
           <!-- Crane Card 3 -->
           <div class="border rounded-lg hover:shadow-lg transition-shadow duration-300">
             <div class="h-48 bg-gray-200 rounded-t-lg relative">
-              <img src="assets/crane3.jpg" alt="Crawler Crane" class="w-full h-full object-cover rounded-t-lg">
-              <span class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
+              <img ngSrc="/crane3.jpg" class="w-full h-full object-cover rounded-t-lg">
+              <span
+                class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 Available
               </span>
             </div>
@@ -302,7 +309,8 @@ import { CommonModule } from '@angular/common';
               <p class="text-sm text-gray-600 mt-1">Best for rough terrain operations</p>
               <div class="mt-4 flex justify-between items-center">
                 <span class="text-blue-600 font-medium">€800/day</span>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors duration-200">
+                <button
+                  class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600 transition-colors duration-200">
                   Book Now
                 </button>
               </div>
@@ -323,7 +331,7 @@ import { CommonModule } from '@angular/common';
               <div class="flex-shrink-0">
                 <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
               <div class="ml-4">
@@ -340,7 +348,7 @@ import { CommonModule } from '@angular/common';
               <div class="flex-shrink-0">
                 <svg class="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                 </svg>
               </div>
               <div class="ml-4">

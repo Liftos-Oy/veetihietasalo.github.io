@@ -17,6 +17,7 @@ class JobScheduler {
             if (response.data.rows[0].elements[0].status === 'OK') {
                 return Math.ceil(response.data.rows[0].elements[0].duration.value / 60);
             }
+            
             return this.estimateTravelTime(origin, destination);
         } catch (error) {
             console.error('Google Maps API Error:', error);
@@ -112,6 +113,10 @@ class JobScheduler {
             console.error('Optimization error:', error);
             throw error;
         }
+    }
+
+    estimateTravelTime(origin, destination) {
+        return Promise.resolve(undefined);
     }
 }
 
