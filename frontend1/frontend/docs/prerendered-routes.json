@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/bookings",
+    "/crane-selector",
+    "/customer",
+    "/customer/dashboard",
+    "/inventory",
+    "/route-optimizer",
+    "/supplier",
+    "/supplier/dashboard"
+  ]
+}
