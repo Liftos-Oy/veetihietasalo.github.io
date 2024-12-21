@@ -17,7 +17,7 @@ import { UserTypeService } from './services/user-type.service';
             <div class="flex">
               <div class="flex-shrink-0 flex items-center cursor-pointer" (click)="navigateToUserType()">
                 <img class="h-8 w-auto"
-                     ngSrc="/liftos-logo.png"
+                     src="assets/images/liftos-logo.png"
                      alt="" width="512" height="512">
               </div>
 
